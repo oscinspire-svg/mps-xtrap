@@ -48,6 +48,7 @@ Sponsorships and donations are welcomed at:
 ```bash
 pip install numpy            # required
 pip install cupy-cuda12x     # optional: GPU support (match your CUDA version)
+pip install mps-xtrap
 ```
 
 ---
