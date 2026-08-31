@@ -1,4 +1,4 @@
-# mps_xtrap; Matrix Product State (Tensor Network) Quantum Circuit Simulator with Overlapping-Support Gate Fusion
+# mps_xtrap; Matrix Product State (Tensor Network) Quantum Circuit Simulator with Overlapping-Support Gate Fusion and Trotter step Extrapolation.
 
 A production-ready quantum circuit simulator based on Matrix Product States (MPS),
 built around **overlapping-support gate fusion** as its headline performance feature,
