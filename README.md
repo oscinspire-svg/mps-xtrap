@@ -1,4 +1,4 @@
-# mps_xtrap — Fast MPS Quantum Circuit Simulator with Overlapping-Support Gate Fusion
+# mps_xtrap; Matrix Product State (Tensor Network) Quantum Circuit Simulator with Overlapping-Support Gate Fusion
 
 A production-ready quantum circuit simulator based on Matrix Product States (MPS),
 built around **overlapping-support gate fusion** as its headline performance feature,
@@ -56,6 +56,7 @@ Sponsorships and donations are welcomed at:
 ```bash
 pip install numpy            # required
 pip install cupy-cuda12x     # optional: GPU support (match your CUDA version)
+pip install mps-xtrap
 ```
 
 ---
