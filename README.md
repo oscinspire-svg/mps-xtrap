@@ -43,7 +43,7 @@ from mps_xtrap import tfim_circuit, MPSSimulator
 
 # Build a circuit with one of the predefined Hamiltonian builders.
 # The other three are heisenberg_circuit, h2_circuit, and fermi_hubbard_circuit.
-circuit = tfim_circuit(dt=0.05, n_qubits=6, t_total=1.0, J=1.0, h=0.5)
+circuit = tfim_circuit(dt=0.05, n_qubits=60, t_total=1.0, J=1.0, h=0.5)
 
 sim = MPSSimulator(chi=64)
 state = sim.run(circuit)
@@ -64,7 +64,7 @@ print(sim.expectation_correlator(state, 'ZXY', sites=[0, 2, 5]))
 # Trotter-step Richardson extrapolation, driven by the same predefined builder.
 from mps_xtrap import bind_circuit, TrotterExtrapolator, TrotterSweepConfig
 
-circuit_fn = bind_circuit('tfim', n_qubits=6, t_total=1.0, J=1.0, h=0.5)  # dt -> Circuit
+circuit_fn = bind_circuit('tfim', n_qubits=60, t_total=1.0, J=1.0, h=0.5)  # dt -> Circuit
 
 extrapolator = TrotterExtrapolator(order=2, chi=64)
 sweep = TrotterSweepConfig(base_dt=0.2, refinement_ratio=2.0, n_levels=4)
@@ -159,7 +159,7 @@ from mps_xtrap import bind_circuit, TrotterExtrapolator, TrotterSweepConfig
 # h2_circuit, fermi_hubbard_circuit) works here. bind_circuit fixes every
 # parameter except dt, returning the dt -> Circuit callable this API expects.
 # See "Hamiltonian Simulation" below for each builder's full parameter list.
-circuit_fn = bind_circuit('tfim', n_qubits=8, t_total=1.0, J=1.0, h=0.5)
+circuit_fn = bind_circuit('tfim', n_qubits=60, t_total=1.0, J=1.0, h=0.5)
 
 sweep = TrotterSweepConfig(base_dt=0.2, refinement_ratio=2.0, n_levels=4)
 
@@ -267,7 +267,7 @@ For a `dt`-sweep with Richardson extrapolation to the continuum limit, `TrotterE
 ```python
 from mps_xtrap import bind_circuit
 
-circuit_fn = bind_circuit('tfim', n_qubits=10, t_total=1.0, J=1.0, h=0.5)  # dt -> Circuit
+circuit_fn = bind_circuit('tfim', n_qubits=60, t_total=1.0, J=1.0, h=0.5)  # dt -> Circuit
 ```
 
 **Preferred: `TrotterSweepConfig`.** Describe the step-size schedule declaratively (a coarsest `dt`, a refinement ratio, a level count) instead of typing out a list by hand, and get the collect/extrapolate split for free, so you can re-run the cheap Richardson math at a different assumed `order` on the same collected data without re-simulating anything.
