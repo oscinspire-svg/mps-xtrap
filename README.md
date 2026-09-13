@@ -31,6 +31,7 @@ Sponsorships and donations are welcome at: [https://flutterwave.com/pay/6yptuvqa
 ```bash
 pip install numpy            # required
 pip install cupy-cuda12x     # optional: GPU support (match your CUDA version)
+pip install mps_xtrap
 ```
 
 ---
